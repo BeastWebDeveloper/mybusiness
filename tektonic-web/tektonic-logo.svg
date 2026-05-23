@@ -1,9 +1,0 @@
-<svg width="360" height="92" viewBox="0 0 360 92" xmlns="http://www.w3.org/2000/svg">
-  <!-- Original mark: an arch with a clay keystone — web architecture -->
-  <g transform="translate(8,12)" fill="none" stroke="#211F1A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M14 50 L14 28 A16 16 0 0 1 46 28 L46 50"/>
-    <line x1="9" y1="50.5" x2="51" y2="50.5"/>
-    <path d="M25 9 L35 9 L33 17 L27 17 Z" fill="#C15F3C" stroke="none"/>
-  </g>
-  <text x="78" y="58" font-family="Newsreader, Georgia, serif" font-size="38" font-weight="500" letter-spacing="6" fill="#211F1A">TEKTONIC</text>
-</svg>
