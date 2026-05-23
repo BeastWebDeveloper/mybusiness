@@ -162,6 +162,33 @@
   .game p{color:var(--muted);font-size:14px;line-height:1.55}
   .game .tags{margin-top:16px;display:flex;gap:7px;flex-wrap:wrap}
   .game .tags span{font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:3px 10px}
+  .game .status.play{border-color:var(--blue);color:var(--blue-bright);background:rgba(90,140,255,.12)}
+  .playbtn{margin-top:18px;width:100%;background:var(--blue);color:#fff;border:none;font-family:var(--sans);
+    font-weight:600;font-size:14px;padding:11px;border-radius:7px;cursor:pointer;transition:.2s}
+  .playbtn:hover{background:var(--blue-bright);transform:translateY(-1px)}
+  .playbtn.dev{margin-top:18px;background:transparent;color:var(--muted-dim);border:1px solid var(--line);
+    text-align:center;font-family:var(--mono);font-size:12px;cursor:default;transform:none}
+  .games-info{margin-top:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+    border:1px solid var(--line);border-radius:10px;padding:16px 22px;background:var(--bg-2)}
+  .games-info .price{font-size:15px;color:var(--muted)}
+  .games-info .price strong{font-family:var(--disp);font-size:24px;color:var(--ink)}
+  .games-info .plats{display:flex;gap:8px;flex-wrap:wrap}
+  .games-info .plats span{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:5px 12px}
+  /* playable game modal */
+  .gmodal{position:fixed;inset:0;z-index:200;background:rgba(6,8,12,.86);backdrop-filter:blur(7px);
+    display:none;align-items:center;justify-content:center;padding:22px}
+  .gmodal.open{display:flex}
+  .gmodal-inner{width:min(980px,100%);height:min(86vh,760px);background:var(--bg-2);border:1px solid var(--blue-dim);
+    border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+  .gmodal-bar{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .gmodal-bar .gt{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--blue-bright)}
+  .gclose{background:none;border:1px solid var(--line);color:var(--ink);font-family:var(--mono);font-size:12px;
+    padding:7px 13px;border-radius:6px;cursor:pointer;transition:.2s}
+  .gclose:hover{border-color:var(--blue);color:var(--blue-bright)}
+  .gmodal iframe{flex:1;width:100%;border:0;background:#000}
+  /* work CTA card */
+  .projcta .thumb{background:linear-gradient(135deg,#101a33,#0c0f16)}
+  .projcta:hover{border-color:var(--blue)}
 
   /* edge */
   .edge{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
@@ -313,9 +340,9 @@
         <div class="thumb"><span class="ph">REICH PRODUCTIONS</span><span class="live" style="position:absolute;bottom:18px;right:18px">● LIVE</span></div>
         <div class="meta"><div><h4>Reich Productions</h4><div class="tag">Media / production · [confirm]</div></div><span class="visit">Visit →</span></div>
       </a>
-      <a class="proj" href="https://sebaspresent.pages.dev/" target="_blank" rel="noopener">
-        <div class="thumb"><span class="ph">SEBAS PRESENT</span><span class="live" style="position:absolute;bottom:18px;right:18px">● LIVE</span></div>
-        <div class="meta"><div><h4>Sebas Present</h4><div class="tag">Brand site · [confirm]</div></div><span class="visit">Visit →</span></div>
+      <a class="proj projcta" href="#contact">
+        <div class="thumb"><span class="ph">+ YOUR PROJECT</span></div>
+        <div class="meta"><div><h4 data-en="Your site here" data-nl="Jouw site hier" data-es="Tu web aquí">Your site here</h4><div class="tag" data-en="Start a project" data-nl="Start een project" data-es="Empezar un proyecto">Start a project</div></div><span class="visit" data-en="Let's talk →" data-nl="Praat met ons →" data-es="Hablemos →">Let's talk →</span></div>
       </a>
     </div>
   </div>
@@ -325,20 +352,36 @@
 <section id="games">
   <div class="wrap">
     <div class="idx">03 / <span data-en="TEKTONIC Games" data-nl="TEKTONIC Games" data-es="TEKTONIC Games">TEKTONIC Games</span></div>
-    <h2 data-en="Playable experiences, in the lab." data-nl="Speelbare ervaringen, in het lab." data-es="Experiencias jugables, en el laboratorio.">Playable experiences, in the lab.</h2>
-    <p class="sec-lede" data-en="Original HTML5 games in active development — built for mobile and the open web." data-nl="Originele HTML5-games in actieve ontwikkeling — gebouwd voor mobiel en het open web." data-es="Juegos HTML5 originales en desarrollo activo — para móvil y la web abierta.">Original HTML5 games in active development — built for mobile and the open web.</p>
+    <h2 data-en="Games you can play right here." data-nl="Games die je hier meteen speelt." data-es="Juegos que puedes jugar aquí mismo.">Games you can play right here.</h2>
+    <p class="sec-lede" data-en="Original HTML5 games — they open in a window on the page, no download. Built mobile-optimized and for PC, PC-only or mobile-only." data-nl="Originele HTML5-games — ze openen in een venster op de pagina, geen download. Mobiel-geoptimaliseerd én voor pc, pc-only of mobile-only." data-es="Juegos HTML5 originales — se abren en una ventana en la propia página, sin descargas. Optimizados para móvil y PC, solo PC o solo móvil.">Original HTML5 games — they open in a window on the page, no download. Built mobile-optimized and for PC, PC-only or mobile-only.</p>
 
-    <!-- TRAILER: replace the inner content with an <iframe ...> from YouTube/Vimeo when your reel is ready -->
-    <div class="trailer" onclick="window.open('#','_self')">
-      <span class="lbl">REEL — 2026</span>
-      <div class="play"><svg width="22" height="26" viewBox="0 0 22 26" fill="none"><path d="M2 2 L20 13 L2 24 Z" fill="#84A8FF"/></svg></div>
-      <span class="sub" data-en="Trailer coming soon — drop your video here" data-nl="Trailer komt eraan — plaats hier je video" data-es="Trailer próximamente — coloca aquí tu vídeo">Trailer coming soon — drop your video here</span>
+    <div class="games-info">
+      <div class="price"><span class="mono">FROM</span> <strong>€400</strong> · <span data-en="on request" data-nl="op aanvraag" data-es="a consulta">on request</span></div>
+      <div class="plats"><span>Mobile + PC</span><span>PC only</span><span>Mobile only</span></div>
     </div>
 
     <div class="games-grid">
-      <div class="game"><div class="top"><span class="status" data-en="In development" data-nl="In ontwikkeling" data-es="En desarrollo">In development</span><span class="gico">[ G_01 ]</span></div><h4>Untitled Runner</h4><p data-en="A fast arcade runner with one-thumb controls, tuned for mobile." data-nl="Een snelle arcade-runner met één-duim besturing, geoptimaliseerd voor mobiel." data-es="Un runner arcade rápido con control a un dedo, optimizado para móvil.">A fast arcade runner with one-thumb controls, tuned for mobile.</p><div class="tags"><span>HTML5</span><span>Mobile</span><span>Canvas</span></div></div>
-      <div class="game"><div class="top"><span class="status beta">Beta</span><span class="gico">[ G_02 ]</span></div><h4>Tilt</h4><p data-en="A minimalist puzzle game about balance and momentum." data-nl="Een minimalistisch puzzelspel over balans en momentum." data-es="Un puzle minimalista sobre equilibrio y momento.">A minimalist puzzle game about balance and momentum.</p><div class="tags"><span>HTML5</span><span>Web</span><span>JS</span></div></div>
-      <div class="game"><div class="top"><span class="status soon" data-en="Coming soon" data-nl="Binnenkort" data-es="Próximamente">Coming soon</span><span class="gico">[ G_03 ]</span></div><h4>Project Three</h4><p data-en="Something new in the workshop. Details under wraps for now." data-nl="Iets nieuws in de werkplaats. Details voorlopig geheim." data-es="Algo nuevo en el taller. Detalles en secreto por ahora.">Something new in the workshop. Details under wraps for now.</p><div class="tags"><span>HTML5</span><span>TBA</span></div></div>
+      <div class="game">
+        <div class="top"><span class="status play">Playable</span><span class="gico">[ G_01 ]</span></div>
+        <h4>Sebas Present</h4>
+        <p data-en="An original HTML5 game — press play to try it right here in the browser." data-nl="Een originele HTML5-game — druk op play en speel hem hier in de browser." data-es="Un juego HTML5 original — pulsa play y pruébalo aquí mismo en el navegador.">An original HTML5 game — press play to try it right here in the browser.</p>
+        <div class="tags"><span>HTML5</span><span>Mobile + PC</span></div>
+        <button class="playbtn" onclick="openGame('https://sebaspresent.pages.dev/','SEBAS PRESENT')" data-en="▶ Play now" data-nl="▶ Speel nu" data-es="▶ Jugar ahora">▶ Play now</button>
+      </div>
+      <div class="game">
+        <div class="top"><span class="status">In development</span><span class="gico">[ G_02 ]</span></div>
+        <h4>Untitled Runner</h4>
+        <p data-en="A fast arcade runner with one-thumb controls, tuned for mobile." data-nl="Een snelle arcade-runner met één-duim besturing." data-es="Un runner arcade rápido con control a un dedo.">A fast arcade runner with one-thumb controls, tuned for mobile.</p>
+        <div class="tags"><span>HTML5</span><span>Mobile only</span></div>
+        <div class="playbtn dev" data-en="In development" data-nl="In ontwikkeling" data-es="En desarrollo">In development</div>
+      </div>
+      <div class="game">
+        <div class="top"><span class="status soon" data-en="Coming soon" data-nl="Binnenkort" data-es="Próximamente">Coming soon</span><span class="gico">[ G_03 ]</span></div>
+        <h4>Project Three</h4>
+        <p data-en="Something new in the workshop. Details under wraps for now." data-nl="Iets nieuws in de werkplaats." data-es="Algo nuevo en el taller.">Something new in the workshop. Details under wraps for now.</p>
+        <div class="tags"><span>HTML5</span><span>PC only</span></div>
+        <div class="playbtn dev" data-en="Coming soon" data-nl="Binnenkort" data-es="Próximamente">Coming soon</div>
+      </div>
     </div>
   </div>
 </section>
@@ -369,7 +412,7 @@
       <div class="plan feat"><span class="badge" data-en="BEST VALUE" data-nl="BESTE KEUZE" data-es="MEJOR OPCIÓN">BEST VALUE</span><div class="pname" data-en="Website + SEO" data-nl="Website + SEO" data-es="Web + SEO">Website + SEO</div><div class="pdesc" data-en="A great site that also gets found on Google." data-nl="Een sterke site die óók gevonden wordt." data-es="Una gran web que además aparece en Google.">A great site that also gets found on Google.</div><div class="ppr">€700</div><ul><li data-en="Everything in Website" data-nl="Alles uit Website" data-es="Todo lo de Web">Everything in Website</li><li data-en="Full technical SEO" data-nl="Volledige technische SEO" data-es="SEO técnico completo">Full technical SEO</li><li data-en="Google Business setup" data-nl="Google Bedrijfsprofiel" data-es="Perfil Google Business">Google Business setup</li></ul><a href="#contact" class="pbtn" data-en="Choose" data-nl="Kies" data-es="Elegir">Choose</a></div>
       <div class="plan"><div class="pname" data-en="SEO only" data-nl="Alleen SEO" data-es="Solo SEO">SEO only</div><div class="pdesc" data-en="Already have a site? Let's make Google find it." data-nl="Heb je al een site? Laten we hem vindbaar maken." data-es="¿Ya tienes web? Hagamos que Google la encuentre.">Already have a site? Let's make Google find it.</div><div class="ppr">€200</div><ul><li data-en="Technical SEO audit" data-nl="Technische audit" data-es="Auditoría SEO">Technical SEO audit</li><li data-en="On-page optimisation" data-nl="On-page optimalisatie" data-es="Optimización on-page">On-page optimisation</li><li data-en="Action plan" data-nl="Actieplan" data-es="Plan de acción">Action plan</li></ul><a href="#contact" class="pbtn" data-en="Choose" data-nl="Kies" data-es="Elegir">Choose</a></div>
     </div>
-    <p class="price-note" data-en="Prices excl. VAT (BTW/TVA) · Games scoped &amp; quoted per project" data-nl="Prijzen excl. btw · Games op maat geprijsd" data-es="Precios sin IVA · Juegos presupuestados por proyecto">Prices excl. VAT (BTW/TVA) · Games scoped &amp; quoted per project</p>
+    <p class="price-note" data-en="Prices excl. VAT (BTW/TVA) · Games from €400, on request · Mobile+PC, PC-only or mobile-only" data-nl="Prijzen excl. btw · Games vanaf €400, op aanvraag · Mobile+PC, PC-only of mobile-only" data-es="Precios sin IVA · Juegos desde €400, a consulta · Mobile+PC, solo PC o solo móvil">Prices excl. VAT (BTW/TVA) · Games from €400, on request · Mobile+PC, PC-only or mobile-only</p>
   </div>
 </section>
 
@@ -435,16 +478,27 @@
         <div class="k" data-en="Reach us" data-nl="Bereik ons" data-es="Contacto">Reach us</div>
         <a href="mailto:zangadopodcast@gmail.com">zangadopodcast@gmail.com</a>
         <a href="https://instagram.com/nicoreich19" target="_blank" rel="noopener">Instagram @nicoreich19</a>
-        <p class="fill">[ City, BE — to add ]</p>
+        <p data-en="Antwerp, Belgium" data-nl="Antwerpen, België" data-es="Amberes, Bélgica">Antwerp, Belgium</p>
       </div>
     </div>
     <div class="tb-foot">
       <span>© 2026 TEKTONIC — NICHOLAS REICH</span>
       <span>DWG. NO. TK-001 · REV. A</span>
-      <span class="fill">[ BTW/BCE N° — TO ADD ]</span>
+      <span>BTW BE 1034.110.763</span>
     </div>
   </div>
 </footer>
+
+<!-- PLAYABLE GAME MODAL -->
+<div class="gmodal" id="gameModal" aria-hidden="true">
+  <div class="gmodal-inner">
+    <div class="gmodal-bar">
+      <span class="gt" id="gameTitle">GAME</span>
+      <button class="gclose" onclick="closeGame()" data-en="✕ Close" data-nl="✕ Sluiten" data-es="✕ Cerrar">✕ Close</button>
+    </div>
+    <iframe id="gameFrame" title="game" allow="autoplay; fullscreen; gamepad; accelerometer; gyroscope" allowfullscreen></iframe>
+  </div>
+</div>
 
 <script>
   /* ---- TEKTONIC animated tectonic mesh (hero background) ---- */
@@ -537,6 +591,28 @@
     });
     resize();
     frame();
+  })();
+
+  /* ---- playable games (open in a window on the page) ---- */
+  function openGame(url, title){
+    var m = document.getElementById('gameModal');
+    document.getElementById('gameFrame').src = url;
+    document.getElementById('gameTitle').textContent = title;
+    m.classList.add('open');
+    m.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeGame(){
+    var m = document.getElementById('gameModal');
+    m.classList.remove('open');
+    m.setAttribute('aria-hidden', 'true');
+    document.getElementById('gameFrame').src = 'about:blank';
+    document.body.style.overflow = '';
+  }
+  (function(){
+    var m = document.getElementById('gameModal');
+    if (m) m.addEventListener('click', function(e){ if (e.target === m) closeGame(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeGame(); });
   })();
 
   /* ---- language toggle ---- */
