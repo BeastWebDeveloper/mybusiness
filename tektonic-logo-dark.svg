@@ -1,0 +1,9 @@
+<svg width="360" height="92" viewBox="0 0 360 92" xmlns="http://www.w3.org/2000/svg">
+  <rect width="360" height="92" fill="#0C0F14"/>
+  <g transform="translate(8,12)" fill="none" stroke="#EAEDF2" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 50 L14 28 A16 16 0 0 1 46 28 L46 50"/>
+    <line x1="9" y1="50.5" x2="51" y2="50.5"/>
+    <path d="M25 9 L35 9 L33 17 L27 17 Z" fill="#5A8CFF" stroke="none"/>
+  </g>
+  <text x="78" y="58" font-family="'Bricolage Grotesque', sans-serif" font-size="36" font-weight="700" letter-spacing="2" fill="#EAEDF2">TEKTONIC</text>
+</svg>
